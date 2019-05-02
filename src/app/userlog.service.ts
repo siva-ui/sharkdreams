@@ -17,7 +17,6 @@ export class UserlogService {
         'Authorization': this.token
       })
     })
-    console.log(model)
     let response = this.http.post('http://localhost:3000/log/logsave', model, this.httpOptions)
     return response
   }
@@ -38,7 +37,6 @@ export class UserlogService {
         'Authorization': this.token
       })
     })
-    console.log(logId)
     let response = this.http.delete('http://localhost:3000/log/deletelogbyid/' + logId, this.httpOptions)
     return response
   }
