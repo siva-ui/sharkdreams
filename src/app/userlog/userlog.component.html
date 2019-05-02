@@ -1,0 +1,41 @@
+
+<div class="jumbotron text-center">
+  <h1>Welcome {{loggedName}}</h1> 
+<form (ngSubmit) = "onSubmit(form)" #form = "ngForm">
+  <div class="form-group">
+  <button  *ngIf = "!timerStarted" type="button" class="btn btn-primary" (click) = "startTimer()">{{actionBtn}}</button>
+</div>
+<div *ngIf = "description">
+  <div class="desStyle">
+    <p>Description</p>
+    <textarea required name="logDescription" placeholder="Please provide the Description" id="" cols="50" rows="3" [(ngModel)] = "logDescription"></textarea>
+  </div>
+  <br>
+  <button *ngIf = "!timerStopped" type="button" class="btn btn-primary" (click) = "stopTimer()">End the Session</button>&nbsp;
+  <span>
+    <button *ngIf = "timerStopped" class="btn btn-primary" type="submit">Submit the Session</button>
+  </span>
+</div>
+</form>
+</div>
+
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>S. No</th>
+      <th>User Name</th>
+      <th>Description</th>
+      <th>Time Spent</th>
+      <th>Delete</th>
+    </tr>
+    <tr *ngFor = "let data of fectchedLog, let i = index">
+      <td>{{i+1}}</td>
+      <td>{{loggedName}}</td>
+      <td>{{data.logDescription}}</td>
+      <td>{{data.stopTimer}} Sec</td>
+      <td><button class="btn btn-danger" (click) ="onDelete(data.logId)">Delete this Log</button></td>
+    </tr>
+  </table>
+</div>
+
+

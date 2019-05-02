@@ -1,0 +1,36 @@
+<div class="login-form" *ngIf="!pageError">
+  <fieldset>
+    <h2 class="text-center">Signup</h2>
+    <br>
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="name" placeholder="Enter Your Name" required="required">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control margin-empty" [(ngModel)]="userName" placeholder="Username"
+        required="required">
+      <span *ngIf="userExist" class="userExist ">
+        Username Already Exist, Choose Another
+      </span>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" [(ngModel)]="password" placeholder="Password" required="required">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block" (click)="onClickSignup()">Log in</button>
+    </div>
+    <div id="userstyle">
+      <a class="nav-link" routerLink="/login" routerLinkActive="active">Already an User? Click here to login</a>
+    </div>
+  </fieldset>
+</div>
+<!-- 404 error -->
+<div *ngIf="pageError">
+  <div class="error-page-wrap">
+    <article class="error-page gradient">
+      <h1>404</h1>
+      <h2>Oops! Page not found</h2>
+      <a class="nav-link" routerLink="/signup" routerLinkActive="active" title="Back to site"
+        class="error-back">Back</a>
+    </article>
+  </div>
+</div>
