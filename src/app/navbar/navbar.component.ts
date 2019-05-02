@@ -11,14 +11,11 @@ export class NavbarComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
-  
   }
-
   logout(){
     localStorage.removeItem('authToken')
     localStorage.removeItem('userName')
     localStorage.removeItem('isPasswordChanged')
     this.router.navigate(['/'])
   }
-
 }
