@@ -7,15 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
   constructor(private router:Router) { }
-
   ngOnInit() {
   }
   logout(){
     localStorage.removeItem('authToken')
     localStorage.removeItem('userName')
-    localStorage.removeItem('isPasswordChanged')
+    localStorage.removeItem('userId')
     this.router.navigate(['/'])
   }
 }
