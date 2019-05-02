@@ -47,13 +47,11 @@ export class UserlogComponent implements OnInit {
         this.timerVal = data
       })
   }
-
   stopTimer() {
     this.timerValue.unsubscribe()
     this.timerStopped = true
     console.log(this.timerVal)
   }
-  
   onSubmit(form){
     if(this.timerStopped = true){
       this.description = form.value
@@ -76,7 +74,6 @@ export class UserlogComponent implements OnInit {
   }
   this.timerStarted = false
 }
-
   fetchLog(){
     this.logSer.logGet(this.userId).subscribe(data => {
       console.log(data)
