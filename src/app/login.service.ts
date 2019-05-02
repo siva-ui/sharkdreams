@@ -6,7 +6,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class LoginService {
   constructor(private http:HttpClient) { }
   checkUserinDB(userDetails){
-    console.log(userDetails)
     let response = this.http.post('http://localhost:3000/user/login', userDetails)
     return response
   }
