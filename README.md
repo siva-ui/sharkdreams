@@ -4,6 +4,8 @@ This app consists of signup, login and logout functionality
 
 User can start and stop the timer and can provide description
 
+Frontend code added here
+
 # SharkDreams
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
