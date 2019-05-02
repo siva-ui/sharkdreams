@@ -28,7 +28,6 @@ export class SignupComponent implements OnInit {
     }
     this.signUpSer.signup(userDetails).subscribe((data) => {
       this.statusObject = data
-      console.log(this.statusObject)
       if (this.statusObject.status === 401) {
         this.userExist = true;
         this.userName = null;
