@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
     this.loginSer.checkUserinDB(userDetails).subscribe((data) => {
       this.statusObject = data
       if(this.statusObject.status == 200 && this.statusObject.token !== undefined){
-        console.log(data)
         let token;
         if(data){
           token = data['token'];
@@ -34,7 +33,6 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('name', this.statusObject.result.name);
           localStorage.setItem('userName', this.statusObject.result.userName);
           localStorage.setItem('userId', this.statusObject.result.userId)
-          console.log(this.statusObject.result.userName);
           this.router.navigate(['/log']);
           this.isLogin = false
         }
